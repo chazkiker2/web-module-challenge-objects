@@ -137,6 +137,7 @@ function getLastReview(arrReviews) {
 // console.log(getLastReview(reviews));
 
 
+
 ///////////////🍔☕️🍽 STRETCH🍔☕️🍽////////////////////
 
 /** STRETCH 1: Write a function called `getReviewByRating` that returns an array containing all reviews in a certain range. Your function should accept: 
@@ -151,11 +152,30 @@ function getLastReview(arrReviews) {
     {name:"Lauren", rating: 4, feedback: "Absolutely love that they have karaoke Fridays! Food and drink selection is okay."}]
 */
 
- function getReviewByRating(/* code here */) {
-    /* code here */
-  }
+ function getReviewByRating(arr, rating) {
+    const arrFiltered = [];
+    for (let i=0; i<arr.length; i++) {
+      const review = arr[i];
+      let currentRating = review.rating;
+      if (currentRating >= rating && currentRating < rating+1) {
+        arrFiltered.push(review);
+      }
+    }
 
+    return arrFiltered;
+  }
+  // Testing getReviewByRating() method
+  // const stretch1Test = getReviewByRating(reviews, 4);
   
+
+
+
+
+
+
+
+
+
 /** STRETCH 2: Write a function called 'getLongestReview' that returns an array containing all reviews longer than 15 words. 
   
 Your function should accept: 
@@ -173,6 +193,17 @@ and should return an array of objects.
     /* code here */
   }
   
+
+
+
+
+
+
+
+
+
+
+
 
 /* STRETCH 3:  This challenge is not related to the data above! 
 
