@@ -4,14 +4,35 @@ const latte = {name: "Cafe Latte", price: 4, category: "Drinks"};
 const burger = {name: "Burger", price: 18, category: "Lunch"};
 const breakfastBurrito = {name: "Breakfast Burrito", price: 16, category:"Breakfast"};
 
+
+/**********************************************************
+ * FINISHED
+ */
 /* Task 1a: write a function to return more menu items with the same format as the items above. */
 
 function createMenuItem(name, cost, category){
-    /* Code here */
+    const newMenuItem = {
+      name: name,
+      cost: cost,
+      category: category,
+    }
+    return newMenuItem;
 }
+/** TESTING createMenuItem()
+ * 
+ */
+// console.log(createMenuItem("Drip Coffee", 2, "Drinks"));
 
+/***************************** 
+ * FINISHED
+ */
 /* Task 1b: use your function to create 3 more menu items. You may add any items to the menu that you'd like */
-
+const dripCoffee = createMenuItem("Drip Coffe", 2, "Drinks");
+const pancakes = createMenuItem("Pancakes", 6, "Breakfast");
+const avoToast = createMenuItem("Avocado Toast", 8, "Breakfast");
+// console.log(dripCoffee);
+// console.log(pancakes);
+// console.log(avoToast);
 
 
 /* Task 2: You're having a lunch special! 25% off for teachers and students, 10% off for everyone else. Add a method to your burger object that automatically calculates price given a string as a parameter. 
