@@ -123,13 +123,18 @@ function getReviewByIndex(reviews, index) {
 getLastReview should accept:
   (1) an array of objects 
   
-and should return a string in the format `name} gave the restaurant a {rating}, and their feedback was: {feedback}`
+and should return a string in the format `{name} gave the restaurant a {rating}, and their feedback was: {feedback}`
 
 For example, if getLastReview is invoked passing the reviews array it will return `Reyna gave the restaurant a 3.5 star review and their feedback was: "this place is chill with really cool people, great for getting work done on weekdays"`.
 */
-function getLastReview(/* code here */) {
-    /* code here */
-  } 
+function getLastReview(arrReviews) {
+  index = arrReviews.length - 1;
+  name = reviews[index].name;
+  rating = reviews[index].rating;
+  feedback = reviews[index].feedback;
+  return `${name} gave the restaurant a ${rating}, and their feedback was: ${feedback}`;
+} 
+// console.log(getLastReview(reviews));
 
 
 ///////////////🍔☕️🍽 STRETCH🍔☕️🍽////////////////////
