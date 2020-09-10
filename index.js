@@ -35,7 +35,10 @@ const avoToast = createMenuItem("Avocado Toast", 8, "Breakfast");
 // console.log(avoToast);
 
 
-/* Task 2: You're having a lunch special! 25% off for teachers and students, 10% off for everyone else. Add a method to your burger object that automatically calculates price given a string as a parameter. 
+/* Task 2: You're having a lunch special! 
+  25% off for teachers and students, 
+  10% off for everyone else. 
+  Add a method to your burger object that automatically calculates price given a string as a parameter. 
 
 Your method should accept: 
 
@@ -44,6 +47,28 @@ Your method should accept:
 and should return a number. 
 
 For example, burger.discount("teacher") would return 13.5 and burger.discount("public") would return 16.2*/
+burger.discount = function (strCustomer) {
+  if (typeof strCustomer !== "string") {
+    console.log("given parameter must be a string!");
+    return null;
+  } else if (strCustomer !== "teacher" && strCustomer !== "student" && strCustomer !== "public") {
+    console.log("given param must be a string specifying type of customer: teacher, student, or public");
+    return null;
+  }
+
+  if (strCustomer === "student" || strCustomer === "teacher") {
+    return this.price - (this.price * 0.25);
+  } else if (strCustomer === "public") {
+    return this.price - (this.price* 0.1);
+  } else {
+    // if this is reached... something is broken.
+    console.log("SOMETHING IS BROKEN");
+    return null;
+  }
+}
+// console.log(burger.discount("teacher"));
+// console.log(burger.discount("student"));
+// console.log(burger.discount("public"));
 
 
 
